@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="4dp"
+    android:layout_marginLeft="4dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/data"
+        android:text="@string/data_label" />
+
+    <TextView
+        android:id="@+id/data"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/idv"
+        android:text="@string/id_label" />
+
+    <TextView
+        android:id="@+id/idv"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/name"
+        android:text="@string/name_label" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/netto"
+        android:text="@string/netto_label" />
+
+    <TextView
+        android:id="@+id/netto"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/brutto"
+        android:text="@string/brutto_label" />
+
+    <TextView
+        android:id="@+id/brutto"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/state"
+        android:text="@string/state_label" />
+
+    <TextView
+        android:id="@+id/state"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/jm"
+        android:text="@string/jm_label" />
+
+    <TextView
+        android:id="@+id/jm"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/LabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/vat"
+        android:text="@string/vat_label" />
+
+    <TextView
+        android:id="@+id/vat"
+        style="@style/DataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

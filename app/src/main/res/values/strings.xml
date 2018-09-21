@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="label_scanner">Skanowanie</string>
+    <string name="label_main_activity"><![CDATA[Wprowadź kod EAN]]></string>
+    <string name="generic_error">Wystąpił błąd</string>
+    <string name="confirm">Zatwierdź</string>
+    <string name="ean_code">Kod EAN</string>
+    <string name="ean_code_empty_error">Kod EAN jest pusty</string>
+    <string name="data_label">Dane kartoteki</string>
+    <string name="id_label">Indeks</string>
+    <string name="name_label">Nazwa</string>
+    <string name="netto_label">Cena netto</string>
+    <string name="brutto_label">Cena brutto</string>
+    <string name="state_label">Stan magazynowy</string>
+    <string name="jm_label">jm.</string>
+    <string name="vat_label">Stawka VAT %</string>
 </resources>
