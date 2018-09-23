@@ -41,8 +41,8 @@ class ResultActivity : AppCompatActivity() {
 
     private fun retrieveAndSetDataModels() {
         if (intent.hasExtra(RESPONSE_EXTRA)) {
-            val response = intent.getParcelableArrayExtra(RESPONSE_EXTRA)
-            setData(response.map { o -> o as DataModel }.toTypedArray())
+            val response = intent.getStringArrayExtra(RESPONSE_EXTRA)
+            setData(response)
         }
     }
 
@@ -58,7 +58,7 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-    private fun setData(data: Array<DataModel>?) {
+    private fun setData(data: Array<String>?) {
         data?.let {
             dataRecycler.layoutManager = LinearLayoutManager(this)
             dataRecycler.adapter = DataResultAdapter(it)

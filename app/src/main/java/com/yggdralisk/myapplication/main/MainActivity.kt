@@ -9,7 +9,6 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
 import com.yggdralisk.myapplication.R
 import com.yggdralisk.myapplication.data.model.ApiResponse
-import com.yggdralisk.myapplication.data.model.DataModel
 import com.yggdralisk.myapplication.result.ResultActivity
 import com.yggdralisk.myapplication.scanner.ScannerActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -49,9 +48,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun postEanCode(eanCode: String) {
-        AndroidNetworking.get("http://128.127.94.18:8080/call")
+        AndroidNetworking.get("http://:8080/call")
                 .addQueryParameter("t", "1")
-                .addQueryParameter("n1", eanCode)
+                .addQueryParameter("s1", eanCode)
                 .build()
                 .getAsObject(ApiResponse::class.java, object : ParsedRequestListener<ApiResponse> {
                     override fun onResponse(response: ApiResponse) {
@@ -74,9 +73,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startResultActivity(response: ApiResponse) {
-        startActivityForResult(Intent(this, ResultActivity::class.java)
-                .putExtra(ResultActivity.RESPONSE_EXTRA, response.data.map { DataModel(it) }.toTypedArray())
-                .putExtra(ResultActivity.CODE_EXTRA, eanCode.text.toString()), RESULT_REQUEST_CODE)
+        startActivityForResult(
+                Intent(this, ResultActivity::class.java)
+                        .putExtra(ResultActivity.RESPONSE_EXTRA, response.data.first().toTypedArray())
+                        .putExtra(ResultActivity.CODE_EXTRA, eanCode.text.toString())
+                , RESULT_REQUEST_CODE)
     }
 
     private fun logAndShowError(throwable: Throwable?) {
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(Intent(this, ScannerActivity::class.java), SCANNER_REQUEST_CODE)
     }
 
-    private fun retrieverAndSetResult(data: Intent?) {
+    private fun retrieveAndSetResult(data: Intent?) {
         data?.let {
             eanCode.setText(data.getStringExtra(ScannerActivity.EAN_EXTRA))
             validateAndPostEanCode()
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         when (requestCode) {
             SCANNER_REQUEST_CODE -> {
                 if (resultCode == Activity.RESULT_OK) {
-                    retrieverAndSetResult(data)
+                    retrieveAndSetResult(data)
                 }
             }
 
