@@ -42,7 +42,7 @@ class ResultActivity : AppCompatActivity() {
     private fun retrieveAndSetDataModels() {
         if (intent.hasExtra(RESPONSE_EXTRA)) {
             val response = intent.getStringArrayExtra(RESPONSE_EXTRA)
-            setData(response)
+            setData(response.drop(1))
         }
     }
 
@@ -58,7 +58,7 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-    private fun setData(data: Array<String>?) {
+    private fun setData(data: List<String>?) {
         data?.let {
             dataRecycler.layoutManager = LinearLayoutManager(this)
             dataRecycler.adapter = DataResultAdapter(it)

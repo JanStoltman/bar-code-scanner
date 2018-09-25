@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yggdralisk.myapplication.R
 import kotlinx.android.synthetic.main.data_recycler_row.view.*
 
-class DataResultAdapter(val data: Array<String>) : RecyclerView.Adapter<DataResultAdapter.ViewHolder>() {
+class DataResultAdapter(val data: List<String>) : RecyclerView.Adapter<DataResultAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
             ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.data_recycler_row, parent, false))
 
